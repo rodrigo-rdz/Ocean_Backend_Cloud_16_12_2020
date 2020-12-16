@@ -1,3 +1,6 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongodb = require('mongodb');
 
 console.info('Conectando ao banco de dados...');
 
