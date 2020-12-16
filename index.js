@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('mongodb');
 
+const port = process.env.port || 3000;
+
 (async () => {
 
 const connectionString = 'mongodb://localhost:27017/';
@@ -69,8 +71,9 @@ app.delete('/mensagens/:id', async (req, res) => {
   res.send('Mensagem foi excluída com sucesso!');
 });
 
-app.listen(3000, () => {
-  console.info('Servidor rodando em http://localhost:3000.');
+app.listen(port, () => {
+  console.info(`Servidor rodando em http://localhost:${port}.`);
 });
 
 })();
+
